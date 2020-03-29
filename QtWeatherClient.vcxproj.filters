@@ -29,6 +29,9 @@
     <Filter Include="picture">
       <UniqueIdentifier>{807ad682-39a5-4049-823f-53f61e2790fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="wsdl文件">
+      <UniqueIdentifier>{6d8fe7c7-17b3-4d63-80a2-e067930ab3a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -100,5 +103,10 @@
     <Image Include="picture\background2.jpg">
       <Filter>picture</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="wsdl文件\WeatherWebService.wsdl">
+      <Filter>wsdl文件</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>

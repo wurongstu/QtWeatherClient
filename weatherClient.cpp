@@ -11,9 +11,6 @@ weatherClient::weatherClient()
 	m_bInit = false;
 }
 
-weatherClient::~weatherClient()
-{
-}
 
 
 
@@ -64,5 +61,29 @@ bool weatherClient::getAllSupportCities(OUT std::vector<QString>& vecAllSupportC
 
 	return bSuccess;
 }
-
+bool weatherClient::getcityWeatherInfoByName(string& cityName,vector<string>& outCityWeatherInfo)
+{
+	string newCityName = cityName;
+	if (cityName.find_first_of('(') != string::npos)
+	{
+		newCityName.erase(cityName.find_first_of('('), cityName.size());
+	}
+	if (!newCityName.empty())
+	{
+		vector<string> vecCityWeatherInfo;
+		_ns1__getWeatherbyCityName ns1__getWeatherbyCityName;
+		ns1__getWeatherbyCityName.theCityName = &newCityName;
+		_ns1__getWeatherbyCityNameResponse ns1__getWeatherbyCityNameResponse;
+		if (SOAP_OK == m_weatherProxy->getWeatherbyCityName(&ns1__getWeatherbyCityName, ns1__getWeatherbyCityNameResponse))
+		{
+			if (nullptr != ns1__getWeatherbyCityNameResponse.getWeatherbyCityNameResult)
+			{
+				outCityWeatherInfo = ns1__getWeatherbyCityNameResponse.getWeatherbyCityNameResult->string;
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
 
