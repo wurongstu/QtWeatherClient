@@ -95,6 +95,7 @@
     <None Include="weatherClient\WeatherWebServiceSoap.nsmap">
       <Filter>weatherClient</Filter>
     </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="picture\background.jpg">
