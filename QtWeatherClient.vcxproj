@@ -111,6 +111,7 @@
   <ItemGroup>
     <Image Include="picture\background.jpg" />
     <Image Include="picture\background2.jpg" />
+    <Image Include="picture\效果图.png" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="wsdl文件\WeatherWebService.wsdl" />

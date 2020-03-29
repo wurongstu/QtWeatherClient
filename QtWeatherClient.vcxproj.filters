@@ -103,6 +103,9 @@
     <Image Include="picture\background2.jpg">
       <Filter>picture</Filter>
     </Image>
+    <Image Include="picture\效果图.png">
+      <Filter>picture</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="wsdl文件\WeatherWebService.wsdl">
